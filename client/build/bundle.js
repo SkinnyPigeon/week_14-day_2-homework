@@ -19815,10 +19815,22 @@
 	
 	  render: function render() {
 	
+	    var characterNodes = this.props.characters.map(function (character, index) {
+	      return React.createElement(
+	        'option',
+	        { key: index, value: index },
+	        ' ',
+	        character.name,
+	        ' '
+	      );
+	    });
+	
 	    return React.createElement(
-	      'h1',
-	      null,
-	      'Hello'
+	      'select',
+	      { value: this.state.selectedIndex, onChange: this.handleChange },
+	      ' ',
+	      characterNodes,
+	      ' '
 	    );
 	  }
 	

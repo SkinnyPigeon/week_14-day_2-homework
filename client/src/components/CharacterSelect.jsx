@@ -14,8 +14,14 @@ var CharacterSelect = React.createClass({
 
   render: function() {
 
+    var characterNodes = this.props.characters.map( function( character, index ) {
+      return(
+        <option key={ index } value={ index }> { character.name } </option>
+      )
+    })
+
     return(
-      <h1>Hello</h1>
+      <select value={ this.state.selectedIndex } onChange={ this.handleChange }> { characterNodes } </select>
     )
   }
 
