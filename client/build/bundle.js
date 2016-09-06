@@ -19862,7 +19862,7 @@
 	
 	  return React.createElement(
 	    'div',
-	    null,
+	    { id: 'character-sheet' },
 	    React.createElement(
 	      'h4',
 	      null,
@@ -19897,7 +19897,7 @@
 /* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var React = __webpack_require__(1);
 	
@@ -19906,29 +19906,29 @@
 	  console.log(props);
 	
 	  return React.createElement(
-	    'div',
-	    null,
+	    "div",
+	    { id: "wands" },
 	    React.createElement(
-	      'h4',
+	      "h4",
 	      null,
-	      'Wand: '
+	      "Wand: "
 	    ),
 	    React.createElement(
-	      'h5',
+	      "h5",
 	      null,
-	      'Wood - ',
+	      "Wood - ",
 	      props.wand.wood
 	    ),
 	    React.createElement(
-	      'h5',
+	      "h5",
 	      null,
-	      'Core - ',
+	      "Core - ",
 	      props.wand.core
 	    ),
 	    React.createElement(
-	      'h5',
+	      "h5",
 	      null,
-	      'Length - ',
+	      "Length - ",
 	      props.wand.length
 	    )
 	  );

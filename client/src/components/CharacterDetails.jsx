@@ -10,7 +10,7 @@ var CharacterDetails = function( props ) {
   }
 
   return(
-    <div>
+    <div id="character-sheet">
       <h4>Name: { props.character.name }</h4>
       <h5>Ancestry: { props.character.ancestry }</h5>
       <h5>House: { props.character.house }</h5>
