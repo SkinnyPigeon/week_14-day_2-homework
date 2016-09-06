@@ -10,7 +10,7 @@ var CharacterBox = React.createClass({
 
   setCurrentCharacter: function( character ) {
     this.setState({ currentCharacter: character })
-  }
+  },
 
   componentDidMount: function() {
     var url = "http://hp-api.herokuapp.com/api/characters";
@@ -23,7 +23,6 @@ var CharacterBox = React.createClass({
       }
     }.bind( this );
     request.send( null );
-    console.log( this.state.characters );
   },
 
   render: function() {

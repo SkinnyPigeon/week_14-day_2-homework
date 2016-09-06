@@ -48,7 +48,7 @@
 	
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	var CharacterBox = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/CharacterBox\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var CharacterBox = __webpack_require__(159);
 	
 	window.onload = function () {
 	  ReactDOM.render(React.createElement(CharacterBox, null), document.getElementById('app'));
@@ -19747,6 +19747,90 @@
 	
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var CharacterSelect = __webpack_require__(160);
+	var CharacterDetails = __webpack_require__(161);
+	
+	var CharacterBox = React.createClass({
+	  displayName: 'CharacterBox',
+	
+	
+	  getInitialState: function getInitialState() {
+	    return { characters: [], currentCharacter: null };
+	  },
+	
+	  setCurrentCharacter: function setCurrentCharacter(character) {
+	    this.setState({ currentCharacter: character });
+	  },
+	
+	  componentDidMount: function componentDidMount() {
+	    var url = "http://hp-api.herokuapp.com/api/characters";
+	    var request = new XMLHttpRequest();
+	    request.open("GET", url);
+	    request.onload = function () {
+	      if (request.status === 200) {
+	        var data = JSON.parse(request.responseText);
+	        this.setState({ characters: data, currentCharacter: data[0] });
+	      }
+	    }.bind(this);
+	    request.send(null);
+	  },
+	
+	  render: function render() {
+	    return React.createElement(CharacterSelect, { characters: this.state.characters, setCurrentCharacter: this.setCurrentCharacter });
+	  }
+	
+	});
+	
+	module.exports = CharacterBox;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var CharacterSelect = React.createClass({
+	  displayName: 'CharacterSelect',
+	
+	
+	  handleChange: function handleChange(e) {
+	    var newIndex = e.target.value;
+	    this.setState({ selectedIndex: newIndex });
+	    this.props.setCurrentCharacter(this.props.characters[newIndex]);
+	  },
+	
+	  getInitialState: function getInitialState() {
+	    return { selectedIndex: null };
+	  },
+	
+	  render: function render() {
+	
+	    return React.createElement(
+	      'h1',
+	      null,
+	      'Hello'
+	    );
+	  }
+	
+	});
+	
+	module.exports = CharacterSelect;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports) {
+
+	"use strict";
 
 /***/ }
 /******/ ]);
