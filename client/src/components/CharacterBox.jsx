@@ -28,7 +28,7 @@ var CharacterBox = React.createClass({
 
   render: function() {
     return(
-      <CharacterSelect characters={ this.state.characters }/>
+      <CharacterSelect characters={ this.state.characters } setCurrentCharacter={ this.setCurrentCharacter }/>
     )
   }
 
