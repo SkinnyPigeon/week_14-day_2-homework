@@ -21,7 +21,7 @@ var CharacterSelect = React.createClass({
     })
 
     return(
-      <select value={ this.state.selectedIndex } onChange={ this.handleChange }> { characterNodes } </select>
+      <select value={ this.state.selectedIndex } onChange={ this.handleChange }>{ characterNodes }</select>
     )
   }
 

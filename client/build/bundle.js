@@ -19784,7 +19784,12 @@
 	  },
 	
 	  render: function render() {
-	    return React.createElement(CharacterSelect, { characters: this.state.characters, setCurrentCharacter: this.setCurrentCharacter });
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(CharacterSelect, { characters: this.state.characters, setCurrentCharacter: this.setCurrentCharacter }),
+	      React.createElement(CharacterDetails, { character: this.state.currentCharacter })
+	    );
 	  }
 	
 	});
@@ -19828,9 +19833,7 @@
 	    return React.createElement(
 	      'select',
 	      { value: this.state.selectedIndex, onChange: this.handleChange },
-	      ' ',
-	      characterNodes,
-	      ' '
+	      characterNodes
 	    );
 	  }
 	
@@ -19840,9 +19843,35 @@
 
 /***/ },
 /* 161 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var CharacterDetails = function CharacterDetails(props) {
+	
+	  if (!props.character) {
+	    return React.createElement(
+	      'p',
+	      null,
+	      'Awaiting Selection...'
+	    );
+	  }
+	
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h4',
+	      null,
+	      'Name: ',
+	      props.character.name
+	    )
+	  );
+	};
+	
+	module.exports = CharacterDetails;
 
 /***/ }
 /******/ ]);
