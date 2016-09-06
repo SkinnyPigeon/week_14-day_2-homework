@@ -1,9 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var CharacterBox = require( './components/CharacterBox' );
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> App Started </h1>,
+    <CharacterBox />,
     document.getElementById('app')
   );
 }
