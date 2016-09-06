@@ -1,4 +1,5 @@
 var React = require( 'react' );
+var CharacterWands = require( './CharacterWands' );
 
 var CharacterDetails = function( props ) {
 
@@ -11,6 +12,10 @@ var CharacterDetails = function( props ) {
   return(
     <div>
       <h4>Name: { props.character.name }</h4>
+      <h5>Ancestry: { props.character.ancestry }</h5>
+      <h5>House: { props.character.house }</h5>
+      <h5>DOB: { props.character.yearOfBirth }</h5>
+      <CharacterWands wand={ props.character.wand } />
     </div>
   )
 

@@ -19848,6 +19848,7 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
+	var CharacterWands = __webpack_require__(162);
 	
 	var CharacterDetails = function CharacterDetails(props) {
 	
@@ -19867,11 +19868,73 @@
 	      null,
 	      'Name: ',
 	      props.character.name
-	    )
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'Ancestry: ',
+	      props.character.ancestry
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'House: ',
+	      props.character.house
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'DOB: ',
+	      props.character.yearOfBirth
+	    ),
+	    React.createElement(CharacterWands, { wand: props.character.wand })
 	  );
 	};
 	
 	module.exports = CharacterDetails;
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var CharacterWand = function CharacterWand(props) {
+	
+	  console.log(props);
+	
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(
+	      'h4',
+	      null,
+	      'Wand: '
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'Wood - ',
+	      props.wand.wood
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'Core - ',
+	      props.wand.core
+	    ),
+	    React.createElement(
+	      'h5',
+	      null,
+	      'Length - ',
+	      props.wand.length
+	    )
+	  );
+	};
+	
+	module.exports = CharacterWand;
 
 /***/ }
 /******/ ]);
